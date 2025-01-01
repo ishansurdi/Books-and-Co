@@ -6,6 +6,7 @@ Books & Co is a comprehensive library management system designed to facilitate t
 
 - [Features](#features)
 - [Installation](#installation)
+- [Additional Dependencies](#additional-dependencies) 
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Main Files and Their Functionality](#main-files-and-their-functionality)
@@ -51,6 +52,28 @@ Books & Co is a comprehensive library management system designed to facilitate t
     - Update the database configuration in `database-connection/db_connection.php`.
 
 4. Configure the web server to point to the project directory.
+
+## Additional Dependencies
+> **Note:** These steps outline the ideal setup process and may vary depending on your operating system and environment. It is strongly recommended to refer to the official documentation and download guidelines for compatibility and best practices.
+
+1. **FPDF (fpdf186):** FPDF is used for generating PDFs. If the library is not present in the project, follow these steps:
+- Download the FPDF library:
+    * Visit the official website: [http://www.fpdf.org](http://www.fpdf.org).
+    * Download the latest version of the FPDF library.
+
+- Extract the downloaded archive.
+
+- Copy the extracted folder into the project directory, usually under `fpdf186/`.
+2. **PHPMailer:** PHPMailer is used for sending emails. If the library is not working, follow these steps:
+  - Install PHPMailer using Composer:
+    ```sh
+    composer require phpmailer/phpmailer
+    ```
+
+    2. Ensure the `vendor/` directory is present in the project and includes PHPMailer.
+
+---
+  
 
 ## Usage
 
