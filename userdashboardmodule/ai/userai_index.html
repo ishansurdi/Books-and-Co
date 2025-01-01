@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="aicss.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Chatbox Button -->
+<div id="chat-button" class="chat-button">
+    💬
+  </div>
+  
+  <!-- Chatbox Container -->
+  <div id="chatbox-container" class="chatbox-container">
+    <div class="chatbox-header">
+      <span>Books & Co. AI Assistant</span>
+      <button id="close-button" class="close-button">×</button>
+    </div>
+    <div id="chatbox-content" class="chatbox-content"></div>
+    <div id="suggested-questions" class="suggested-questions">
+      <span>Suggested Questions:</span>
+      <ul id="suggestions-list"></ul>
+    </div>
+    <div class="input-area">
+      <input type="text" id="chat-input" placeholder="Ask a question..." />
+      <button id="send-button">Send</button>
+    </div>
+</div>
+  
+  
+  <script src="chatbot.js"></script> 
+</body>
+</html>

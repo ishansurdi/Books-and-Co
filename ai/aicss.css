@@ -1,0 +1,140 @@
+/* Chat Button */
+.chat-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4CAF50, #34a0a4);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .chat-button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Chatbox Container */
+  .chatbox-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 340px;
+    max-height: 450px;
+    background: #f5f7fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  .chatbox-header {
+    background: #34a0a4;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  .close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .chatbox-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .suggested-questions {
+    background: #eef2f3;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  
+  .suggested-questions ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+  }
+  
+  .suggested-questions ul li {
+    margin: 5px 0;
+    cursor: pointer;
+    color: #34a0a4;
+    text-decoration: underline;
+  }
+  
+  /* Input Area */
+  .input-area {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-top: 1px solid #ddd;
+  }
+  
+  #chat-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  #send-button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    background: #34a0a4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #send-button:hover {
+    background: #2e8a87;
+  }
+  
+  .user-message, .bot-message {
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px 0;
+    max-width: 80%;
+  }
+  
+  .user-message {
+    background-color: #e0f7fa;
+    color: #00796b;
+    align-self: flex-end;
+  }
+  
+  .bot-message {
+    background-color: #34a0a4;
+    color: white;
+    align-self: flex-start;
+  }
+  
+  /* Slide-in Animation */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

@@ -1,0 +1,39 @@
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+#typed-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    border-right: 2px solid #333; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #333;
+    }
+}

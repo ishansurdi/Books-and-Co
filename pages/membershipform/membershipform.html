@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form | Books & Co</title>
+    <link rel="icon" href="../../images/logofile/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href= "../../css/slider.css">
+    <link rel="stylesheet" href="../../css/membership.css">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <a href="../index.html">
+            <div class="logo">
+                <img src="../../images/logofile/png/logo-no-background.png" alt="Logo">
+            </div></a>
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+        <div class="overlay" id="overlay"></div>
+        <div class="side-menu" id="side-menu">
+            <div class="close-btn" id="close-btn">&times;</div>
+            <div class="menu-content">
+                <ul>
+                    <li><a href="../login/login.php", target="_blank">Login / Sign-Up</a></li>
+                    <li><a href="#">Apply for Membership</a></li>
+                </ul>
+                <div class="social-media">
+                    <a href="#"><img src="../../images/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="../../images/x.svg" alt="Twitter"></a>
+                    <a href="#"><img src="../../images/instagram.svg" alt="Instagram"></a>
+                </div>
+                <div class="footer">
+                    <p>&copy; 2024 PBL Group - 13. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-container">
+        <div class="content">
+            <!-- Other content here -->
+        </div>
+        
+        <div class="membership-form">
+            <h2>Membership Form</h2>
+            <form action="dbprocess.php" method="POST">
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="middle_name">Middle Name:</label>
+                    <input type="text" id="middle_name" name="middle_name">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mobile_number">Mobile Number:</label>
+                    <input type="tel" id="mobile_number" name="mobile_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" readonly>
+                </div>
+        
+                <div class="form-group">
+                    <label for="occupation">Occupation:</label>
+                    <select id="occupation" name="occupation" required>
+                        <option value="">Select</option>
+                        <option value="Student">Student</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Business">Business</option>
+                        <option value="Retired">Retired</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="residential_address">Residential Address:</label>
+                    <textarea id="residential_address" name="residential_address" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="membership_plan">Membership Plan:</label>
+                    <select id="membership_plan" name="membership_plan" required>
+                        <option value="">Select</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Half-Yearly">Half-Yearly</option>
+                        <option value="Yearly">Yearly</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="membership_plan_id">Membership Plan ID:</label>
+                    <input type="text" id="membership_plan_id" name="membership_plan_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="membership_amount">Membership Amount:</label>
+                    <input type="text" id="membership_amount" name="membership_amount" readonly>
+                </div>
+                
+                <!-- OTP section -->
+                <!-- <div id="otp_container">
+                    <button type="button" id="get_otp">Get OTP</button>
+                </div> -->
+                
+                <button type="submit" id="submit_button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <hr class="footer-separator">
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../../images/logofile/png/logo-no-background.png" alt="Logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-maps">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.24647107663!2d73.81253627470771!3d18.517760969261065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfb9e53a05f9%3A0x2be5e8da02be693e!2sMIT%20World%20Peace%20University%20(MIT-WPU)!5e0!3m2!1sen!2sin!4v1723285471888!5m2!1sen!2sin" 
+                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="../../images/facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="../../images/x.svg" alt="Twitter"></a>
+            <a href="#"><img src="../../images/instagram.svg" alt="Instagram"></a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Your Company. All rights reserved.
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Calculate and display age
+    document.getElementById('dob').addEventListener('change', function() {
+        const dob = new Date(this.value);
+        const diffMs = Date.now() - dob.getTime();
+        const ageDt = new Date(diffMs);
+        const age = Math.abs(ageDt.getUTCFullYear() - 1970);
+        document.getElementById('age').value = age;
+    });
+
+
+});
+    </script>
+
+    <script src="../../js/slider.js"></script>
+    <script src="../../js/membership.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typing Effect Section */
+/* Add margin-bottom if needed to make space for the button */
+.typing-effect {
+    /* Assuming you have a class like this for typing effect */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; 
+}
+
+/* Quiz Button */
+#playQuizBtn {
+    padding: 15px 30px;
+    
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    /* Absolute positioning to overlap image */
+    position: absolute;
+    bottom: 250px; /* Adjust this based on where you want it */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Z-index to ensure it’s in front of the image */
+    z-index: 2; 
+    
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects */
+#playQuizBtn:hover {
+    background-color: #0056b3;
+    /* transform: scale(1.05); */
+}
+
+/* Animation - waves effect */
+#playQuizBtn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: all 0.6s ease-in-out;
+}
+
+#playQuizBtn:hover:before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Button text transition effect */
+#playQuizBtn span {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+#playQuizBtn:before {
+    z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+

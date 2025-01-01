@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="booksearch.css">
+</head>
+<body>
+    <div class="search-container">
+        <h1> Library Book Search</h1>
+        <select id="filter-option">
+            <option value="isbn">ISBN</option>
+            <option value="author">Author Name</option>
+            <option value="book">Book Name</option>
+        </select>
+
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Dystopian">Dystopian</option>
+          <option value="Historical">Historical</option>
+          <option value="Romance">Romance</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Modernist">Modernist</option>
+          <option value="Epic">Epic</option>
+          <option value="Psychological">Psychological</option>
+          <option value="Philosophical">Philosophical</option>
+      </select>
+        <input type="text" id="search-bar" placeholder="Search Book By Name .......">
+        <button onclick="searchBooks()">Search</button>
+    </div>
+    
+    <div class="results-container">
+        <ul id="results-list"></ul>
+    </div>
+
+    <script src="booksearch.js"></script>
+</body>
+</html>
