@@ -9,6 +9,7 @@ Books & Co is a comprehensive library management system designed to facilitate t
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Main Files and Their Functionality](#main-files-and-their-functionality)
+- [Tables](#tables)
 - [Updating Passwords](#updating-passwords)
 - [Contributing](#contributing)
 - [License](#license)
@@ -171,6 +172,246 @@ PBL_SourceCode/
 
 ### Main Entry Point
 - `index.html`: Main entry point for the application, through which all other sections can be navigated.
+
+## Tables
+# Database Structure
+
+## Table: admins
+
+| Column Name    | Type          | Key |
+|----------------|---------------|-----|
+| admin_name     | varchar(100)  |     |
+| mobile_number  | varchar(15)   |     |
+| email          | varchar(100)  | UNI |
+| aid            | varchar(20)   | PRI |
+| admin_password | varchar(255)  |     |
+
+No foreign key relations.
+
+---
+
+## Table: announcements
+
+| Column Name        | Type              | Key |
+|--------------------|-------------------|-----|
+| id                 | int               | PRI |
+| announcement_type  | varchar(50)       |     |
+| subject            | varchar(255)      |     |
+| body               | text              |     |
+| sequence_number    | int               |     |
+| send_to            | enum('all','individual') |     |
+| timestamp          | timestamp         |     |
+| status             | enum('Sent','Not Sent') |     |
+
+No foreign key relations.
+
+---
+
+## Table: books
+
+| Column Name              | Type          | Key |
+|--------------------------|---------------|-----|
+| ISBN                    | varchar(20)   | PRI |
+| Library_id              | varchar(20)   | UNI |
+| Name_of_Book            | varchar(255)  |     |
+| Author                  | varchar(255)  |     |
+| Publisher               | varchar(255)  |     |
+| Journal_Magazine_Other  | varchar(255)  |     |
+| Genre                   | varchar(100)  |     |
+| Suitable_for            | varchar(100)  |     |
+| Brief_Details           | text          |     |
+| Who_Should_Read         | text          |     |
+| For_What_You_Should_Read| text          |     |
+| Publication_Year        | int           |     |
+| Edition                 | varchar(50)   |     |
+| Language                | varchar(50)   |     |
+| Pages                   | int           |     |
+| Cover_Image_URL         | varchar(255)  |     |
+| Added_Date              | timestamp     |     |
+
+No foreign key relations.
+
+---
+
+## Table: books_availability
+
+| Column Name    | Type              | Key |
+|----------------|-------------------|-----|
+| ISBN           | varchar(20)       | PRI |
+| library_id     | varchar(50)       | PRI |
+| name_of_book   | varchar(255)      |     |
+| quantities     | int               |     |
+| borrowed       | int               |     |
+| returned       | int               |     |
+| status         | enum('Available','Unavailable','Reserved') |     |
+
+**Foreign Key Relation:**
+- `ISBN` → `books.ISBN`
+- `library_id` → `books.Library_id`
+
+---
+
+## Table: inventory
+
+| Column Name    | Type              | Key |
+|----------------|-------------------|-----|
+| Inventory_ID   | int               | PRI |
+| ISBN           | varchar(20)       | MUL |
+| Library_ID     | varchar(20)       | MUL |
+| Quantity       | int               |     |
+| Location       | varchar(100)      |     |
+| Date_Added     | date              |     |
+| Status         | enum('Available','Checked Out','Reserved') |     |
+| Book_Condition | enum('New','Good','Fair','Poor') |     |
+| Last_Updated   | timestamp         |     |
+
+**Foreign Key Relation:**
+- `ISBN` → `books.ISBN`
+- `Library_ID` → `books.Library_id`
+
+---
+
+## Table: issue_books
+
+| Column Name         | Type              | Key |
+|---------------------|-------------------|-----|
+| MID                 | varchar(50)       | MUL |
+| AID                 | varchar(50)       | MUL |
+| reference_number    | varchar(50)       | PRI |
+| ISBN                | varchar(20)       |     |
+| name_of_book        | varchar(255)      |     |
+| date_of_book_issue  | datetime          |     |
+| time_of_book_issue  | time              |     |
+| expected_date_of_return | date          |     |
+| actual_date_of_return | date            |     |
+| fine_imposed        | enum('Yes','No')  |     |
+| fine_amount         | decimal(10,2)     |     |
+| fine_paid           | varchar(3)        |     |
+| date_of_fine_paid   | date              |     |
+| FTID                | int               |     |
+
+**Foreign Key Relation:**
+- `MID` → `member_details.MID`
+- `AID` → `admins.aid`
+- `ISBN` → `books.ISBN`
+
+---
+
+## Table: login_logs
+
+| Column Name    | Type          | Key |
+|----------------|---------------|-----|
+| id             | int           | PRI |
+| aid            | varchar(50)   | MUL |
+| login_time     | datetime      |     |
+| logout_time    | datetime      |     |
+| session_status | enum('active','ended') |     |
+
+**Foreign Key Relation:**
+- `aid` → `admins.aid`
+
+---
+
+## Table: member_details
+
+| Column Name        | Type          | Key |
+|--------------------|---------------|-----|
+| MID                | varchar(50)   |     |
+| first_name         | varchar(50)   |     |
+| last_name          | varchar(50)   |     |
+| email              | varchar(50)   |     |
+| account_status     | varchar(50)   |     |
+| Date_of_update     | date          |     |
+| Time_of_update     | time          |     |
+| last_date_of_appeal| date          |     |
+| appealed           | varchar(50)   |     |
+| appealed_on        | varchar(50)   |     |
+
+No foreign key relations.
+
+---
+
+## Table: membership_form
+
+| Column Name          | Type          | Key |
+|----------------------|---------------|-----|
+| first_name           | varchar(50)   |     |
+| middle_name          | varchar(50)   |     |
+| last_name            | varchar(50)   |     |
+| gender               | enum('Male','Female','Other') |     |
+| mobile_number        | varchar(15)   |     |
+| email                | varchar(100)  |     |
+| dob                  | date          |     |
+| age                  | int           |     |
+| occupation           | enum('Student','Professional','Business','Retired','Other') |     |
+| residential_address  | text          |     |
+| membership_plan      | enum('Monthly','Half-Yearly','Yearly') |     |
+| membership_plan_id   | varchar(10)   |     |
+| membership_amount    | decimal(10,2) |     |
+| membership_id        | varchar(12)   | PRI |
+| submission_date      | date          |     |
+| submission_day       | varchar(10)   |     |
+| submission_time      | time          |     |
+| ip_address           | varchar(45)   |     |
+| created_at           | timestamp     |     |
+| updated_at           | timestamp     |     |
+| mail_sent            | enum('no','yes') |     |
+| mail_sent_date       | datetime      |     |
+| mail_sent_status     | enum('sent','error') |     |
+| temp_password        | varchar(255)  |     |
+
+No foreign key relations.
+
+---
+
+## Table: transactions
+
+| Column Name             | Type          | Key |
+|-------------------------|---------------|-----|
+| MID                    | varchar(50)   | MUL |
+| TID                    | bigint        | PRI |
+| Amount                 | decimal(10,2) |     |
+| Plan                   | varchar(50)   |     |
+| Method                 | varchar(50)   |     |
+| Status                 | varchar(20)   |     |
+| Date_of_Transaction    | date          |     |
+| Time_of_Transaction    | time          |     |
+| Next_Date_of_Transaction| date          |     |
+| Account_Status         | enum('Active','Inactive','Suspended') |     |
+| Penalty_for_Late_Payment| decimal(10,2) |     |
+| Penalty_Paid           | enum('YES','NO') |     |
+| Date_of_Penalty_Payment| date          |     |
+| Time_of_Penalty_Payment| time          |     |
+| PTID                   | int           |     |
+
+**Foreign Key Relation:**
+- `MID` → `member_details.MID`
+
+---
+
+## Table: userdata
+
+| Column Name    | Type          | Key |
+|----------------|---------------|-----|
+| username       | varchar(50)   |     |
+| email          | varchar(50)   |     |
+| userpassword   | varchar(50)   |     |
+
+No foreign key relations.
+
+---
+
+## Table: userstatistics
+
+| Column Name      | Type          | Key |
+|------------------|---------------|-----|
+| MID             | varchar(255)  | PRI |
+| Books_Borrowed  | int           |     |
+| Pending_Requests| int           |     |
+| Penalties       | decimal(10,2) |     |
+
+No foreign key relations.
+> **Note:** Certain columns in some tables may not be utilized. Some tables might have been missed; kindly review the code for completeness.
 
 ## Updating Passwords
 
