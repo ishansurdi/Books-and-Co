@@ -494,7 +494,7 @@ For any inquiries or issues, please contact:
 
 - **Project Lead**: Ishan Surdi
 - **Email**: [ishansurdi2105@gmail.com](ishansurdi2105@gmail.com)
-- **LinkedIn**: [www.linkedin.com/in/ishansurdiofficial](www.linkedin.com/in/ishansurdiofficial)
+
 
 ---
 Thank you for exploring this project. We look forward to you feedback and contributions!
