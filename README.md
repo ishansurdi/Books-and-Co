@@ -2,6 +2,33 @@
 
 Books & Co is a comprehensive library management system designed to facilitate the management of books, users, and various library operations. This project is developed as a Project Based Learning initiative.
 
+> ## ⚠️ Important Update: Email Functionality Currently Unavailable
+>
+> ### 📌 Summary
+> As of **January 2025**, Google has officially deprecated the use of **App Passwords for third-party applications**, including those used to send emails through Gmail’s SMTP service. This move is part of Google's continued effort to enhance user security and enforce modern authentication standards.
+>
+> ### ❗ Impact on This Project
+> The email module within this project previously relied on App Password-based SMTP authentication for sending automated emails such as:
+> - Account registration confirmations
+> - Password reset links
+> - System alerts and notifications
+>
+> Due to the policy change, these email features are currently **non-functional**. Attempts to send emails via the current configuration will result in authentication errors, and affected features may not work as expected.
+>
+> ### 🔧 Ongoing Work and Resolution
+> We are actively working to migrate the email module to use **Google’s OAuth 2.0 authentication protocol**, which is now the recommended method for securely accessing Gmail services. This migration involves:
+> - Registering the application with the Google Cloud Console
+> - Handling user consent via secure OAuth scopes
+> - Implementing access and refresh tokens for reliable, long-term operation
+>
+> Once this integration is complete, the email functionality will be restored with full compliance to Google’s updated policies.
+>
+> ### 🙏 A Note to Users and Contributors
+> We sincerely apologise for the temporary disruption this may cause. Please rest assured that restoring and securing email support is a top priority. We appreciate your patience and continued support while we implement the necessary updates.
+>
+> Progress updates will be shared here in the repository as development advances.
+##
+
 ## Table of Contents
 
 - [Features](#features)
